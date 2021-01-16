@@ -1,5 +1,6 @@
 env
 .vscode/settings.json
-.idea
+.idea/
 __pycache__
 .ics
+venv
