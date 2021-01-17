@@ -139,7 +139,7 @@ def filter_calendar(dict):
             file = blacklist_events(file, term)
 
     # Take the filtered list from prev. and see if it needs to be split into seperate calendars
-    if is_cal_seperated:
+    if is_cal_separated:
         num_list = []
         name_list = []
         cal_dict = seperate_cal_by_course(file)
@@ -159,8 +159,8 @@ def filter_calendar(dict):
 #print(date.today())
 
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
-filter_calendar(given_dict)
+# given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
+# filter_calendar(given_dict)
 
 
 

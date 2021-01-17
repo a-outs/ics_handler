@@ -26,6 +26,8 @@ class RequestSchema(Schema):
     blacklistData = fields.String()
     separateData = fields.Boolean()
     excludeEventsData = fields.Boolean()
+    startDate = fields.String()
+    endDate = fields.String()
 
 
 class WrapperSchema(Schema):
