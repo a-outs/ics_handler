@@ -5,6 +5,8 @@ DTSTART:20210106T000000
 DTEND:20210106T000000
 DTSTAMP:20210107T033600Z
 UID:event-assignment-609995
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_609995
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Pre-Lab 1 [BIS 002B Sec A\,B WQ 2021]
@@ -12,6 +14,8 @@ DTSTART:20210111T170000Z
 DTEND:20210111T170000Z
 DTSTAMP:20210111T165800Z
 UID:event-assignment-601285
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601285
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Applying Time Value Concepts [MGT 012Y 001 WQ 2021]
@@ -19,6 +23,8 @@ DTSTART:20210111T000000
 DTEND:20210111T000000
 DTSTAMP:20210106T214800Z
 UID:event-assignment-548173
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548173
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ FINRA Assessment [MGT 012Y 001 WQ 2021]
@@ -26,6 +32,8 @@ DTSTART:20210114T001000Z
 DTEND:20210114T001000Z
 DTSTAMP:20210101T060000Z
 UID:event-assignment-548171
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548171
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Quiz: Time Value of Money Concepts [MGT 012Y 001 WQ 2021]
@@ -33,6 +41,8 @@ DTSTART:20210114T001000Z
 DTEND:20210114T001000Z
 DTSTAMP:20210106T010000Z
 UID:event-assignment-548163
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548163
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Lecture Homework 1 (due Weds\, 1/13) [BIS 002B Sec A\,B WQ 2021]
@@ -40,6 +50,8 @@ DTSTART:20210113T000000
 DTEND:20210113T000000
 DTSTAMP:20210111T002000Z
 UID:event-assignment-624982
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_624982
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Test A [ECS 020 A01 WQ 2021]
@@ -47,6 +59,8 @@ DTSTART:20210115T211000Z
 DTEND:20210115T211000Z
 DTSTAMP:20210115T210400Z
 UID:event-assignment-627233
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_545141&mon
+ th=01&year=2021#assignment_627233
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Test B [ECS 020 A01 WQ 2021]
@@ -54,6 +68,8 @@ DTSTART:20210116T061000Z
 DTEND:20210116T061000Z
 DTSTAMP:20210116T050000Z
 UID:event-assignment-627234
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_545141&mon
+ th=01&year=2021#assignment_627234
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Pre-Lab 2 [BIS 002B Sec A\,B WQ 2021]
@@ -61,6 +77,8 @@ DTSTART:20210118T170000Z
 DTEND:20210118T170000Z
 DTSTAMP:20210115T161900Z
 UID:event-assignment-601287
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601287
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:O*Net Interest Profiler [MGT 012Y 001 WQ 2021]
@@ -68,6 +86,8 @@ DTSTART:20210121T001000Z
 DTEND:20210121T001000Z
 DTSTAMP:20210114T010000Z
 UID:event-assignment-548178
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548178
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Career Choice [MGT 012Y 001 WQ 2021]
@@ -75,6 +95,8 @@ DTSTART:20210121T001000Z
 DTEND:20210121T001000Z
 DTSTAMP:20210114T010000Z
 UID:event-assignment-548166
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548166
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:SURVEY: O*Net Interest Profiler [MGT 012Y 001 WQ 2021]
@@ -82,6 +104,8 @@ DTSTART:20210121T001000Z
 DTEND:20210121T001000Z
 DTSTAMP:20210114T010000Z
 UID:event-assignment-548172
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548172
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Lecture Homework 2 (Due Weds\, 1/20) [BIS 002B Sec A\,B WQ 2021]
@@ -89,6 +113,8 @@ DTSTART:20210120T000000
 DTEND:20210120T000000
 DTSTAMP:20210115T213000Z
 UID:event-assignment-627565
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_627565
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Post Lab 1 [BIS 002B Sec A\,B WQ 2021]
@@ -96,6 +122,8 @@ DTSTART:20210121T000000
 DTEND:20210121T000000
 DTSTAMP:20210117T052800Z
 UID:event-assignment-601286
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601286
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Midterm 1 [BIS 002B Sec A\,B WQ 2021]
@@ -103,6 +131,8 @@ DTSTART:20210127T180000Z
 DTEND:20210127T180000Z
 DTSTAMP:20210115T214100Z
 UID:event-assignment-627799
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_627799
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Homes [MGT 012Y 001 WQ 2021]
@@ -110,6 +140,8 @@ DTSTART:20210128T001000Z
 DTEND:20210128T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548167
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548167
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Taxes [MGT 012Y 001 WQ 2021]
@@ -117,6 +149,8 @@ DTSTART:20210128T001000Z
 DTEND:20210128T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548170
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=01&year=2021#assignment_548170
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Midterm Exam [MGT 012Y 001 WQ 2021]
@@ -124,6 +158,8 @@ DTSTART:20210204T220000Z
 DTEND:20210204T220000Z
 DTSTAMP:20201229T234600Z
 UID:event-assignment-608626
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_608626
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Credit Report HW [MGT 012Y 001 WQ 2021]
@@ -131,6 +167,8 @@ DTSTART:20210211T001000Z
 DTEND:20210211T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548161
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548161
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Cars [MGT 012Y 001 WQ 2021]
@@ -138,6 +176,8 @@ DTSTART:20210211T001000Z
 DTEND:20210211T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548160
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548160
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Credit Reports\, Scores\, and Cards [MGT 012Y 001 WQ 2021]
@@ -145,6 +185,8 @@ DTSTART:20210211T001000Z
 DTEND:20210211T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548168
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548168
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Final Group Project -- Small Discussion Groups [MGT 012Y 001 WQ 20
@@ -153,6 +195,8 @@ DTSTART:20210218T001000Z
 DTEND:20210218T001000Z
 DTSTAMP:20201230T001000Z
 UID:event-assignment-548174
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548174
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Insurance [MGT 012Y 001 WQ 2021]
@@ -160,6 +204,8 @@ DTSTART:20210218T001000Z
 DTEND:20210218T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548169
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548169
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Spending and Saving [MGT 012Y 001 WQ 2021]
@@ -167,6 +213,8 @@ DTSTART:20210218T001000Z
 DTEND:20210218T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548164
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548164
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Retirement and Aging [MGT 012Y 001 WQ 2021]
@@ -174,6 +222,8 @@ DTSTART:20210225T001000Z
 DTEND:20210225T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548158
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=02&year=2021#assignment_548158
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Investing Basics [MGT 012Y 001 WQ 2021]
@@ -181,6 +231,8 @@ DTSTART:20210304T001000Z
 DTEND:20210304T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548162
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548162
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:QUIZ: Investor Behavior [MGT 012Y 001 WQ 2021]
@@ -188,6 +240,8 @@ DTSTART:20210311T001000Z
 DTEND:20210311T001000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548156
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548156
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Group Project [MGT 012Y 001 WQ 2021]
@@ -195,6 +249,8 @@ DTSTART:20210316T000000
 DTEND:20210316T000000
 DTSTAMP:20201230T001900Z
 UID:event-assignment-548175
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548175
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Final Exam [MGT 012Y 001 WQ 2021]
@@ -202,6 +258,8 @@ DTSTART:20210318T150000Z
 DTEND:20210318T150000Z
 DTSTAMP:20201229T234000Z
 UID:event-assignment-548155
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548155
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Course Evaluations [MGT 012Y 001 WQ 2021]
@@ -209,6 +267,8 @@ DTSTART:20210318T223000Z
 DTEND:20210318T223000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548157
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548157
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Peer Evaluation of Group Members [MGT 012Y 001 WQ 2021]
@@ -216,5 +276,7 @@ DTSTART:20210318T223000Z
 DTEND:20210318T223000Z
 DTSTAMP:20200928T165200Z
 UID:event-assignment-548159
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_527132&mon
+ th=03&year=2021#assignment_548159
 END:VEVENT
 END:VCALENDAR
