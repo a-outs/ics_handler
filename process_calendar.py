@@ -73,7 +73,7 @@ def seperate_cal_by_course(file): # returns list
 def filter_calendar(dict):
     input_link = dict["inputLinkData"]
     blacklist_terms = dict["blacklistData"]
-    is_cal_seperated = dict["seperateData"]
+    is_cal_separated = dict["separateData"]
     is_non_assignment_excluded = dict["excludeEventsData"]
 
     # Create unfiltered calendar
@@ -90,7 +90,7 @@ def filter_calendar(dict):
             file = blacklist_events(file, term)
 
     # Take the filtered list from prev. and see if it needs to be split into seperate calendars
-    if is_cal_seperated:
+    if is_cal_separated:
         seperate_cal_by_course(file)
     
 
@@ -98,8 +98,8 @@ def filter_calendar(dict):
     f.write(file)
     f.close()
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"MAT 021B","seperateData":True,"excludeEventsData":True}
-filter_calendar(given_dict)
+#given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"MAT 021B","seperateData":True,"excludeEventsData":True}
+#filter_calendar(given_dict)
 
 '''
 file = get_calendar()
