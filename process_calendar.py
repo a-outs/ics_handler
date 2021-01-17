@@ -71,6 +71,17 @@ def blacklist_events(file, blacklist):
         
     return cal.to_ical()
 
+def whitelist_events(file, whitelist):
+    file_in_text = Calendar.from_ical(file)
+
+    cal = Calendar()
+    for old_event in file_in_text.walk('VEVENT'):
+        summary = old_event.get('summary')
+        if (whitelist in summary):
+            add_event_to_cal(old_event, cal)
+        
+    return cal.to_ical()
+
 def seperate_cal_by_course(file): 
     cal_dict = {}
 
