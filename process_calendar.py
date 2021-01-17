@@ -14,6 +14,7 @@ def add_event_to_cal(old_event, cal):
     dt_stamp = old_event.get('dtstamp').to_ical()
     start_date = old_event.get('dtstart').to_ical()
     end_date = old_event.get('dtend').to_ical()
+    description = old_event.get('description')
     uid = old_event.get('uid')
     url = old_event.get('url')
 
@@ -22,6 +23,7 @@ def add_event_to_cal(old_event, cal):
     event['DTSTART'] = start_date
     event['DTEND'] = end_date
     event['SUMMARY'] = summary
+    event['DESCRIPTION']
     event['URL'] = url
 
     cal.add_component(event)
@@ -34,8 +36,6 @@ def filter_by_date(file, start_date, end_date):
     end_date = end_date.split("-")
     start = datetime.datetime(int(start_date[0]), int(start_date[1]), int(start_date[2]))
     end = datetime.datetime(int(end_date[0]), int(end_date[1]), int(end_date[2]))
-
-    print(start)
 
     cal = Calendar()
     for old_event in file_in_text.walk('VEVENT'):
@@ -65,7 +65,8 @@ def blacklist_events(file, blacklist):
 
     cal = Calendar()
     for old_event in file_in_text.walk('VEVENT'):
-        summary = old_event.get('summary')
+        summary = old_event.get('summary').lower()
+        blacklist = blacklist.lower()
         if (blacklist not in summary):
             add_event_to_cal(old_event, cal)
         
@@ -110,6 +111,8 @@ def generate_unique_number(list):
         generate_unique_number(list)
 
 def write_file(name, calendar):
+    save_path = "../buld/"
+    name = save_path + name
     f = open(name, 'wb')
     f.write(calendar)
     f.close()
@@ -153,13 +156,14 @@ def filter_calendar(dict):
             file_name = str(name_num) + ".ics"
             name_list.append(file_name)
             write_file(file_name, cal_dict[key].to_ical())
-        
-        return name_list 
+    else:
+        num_list = []
+        name_num = generate_unique_number(num_list)
+        file_name = str(name_num) + ".ics"
 
-#print(date.today())
+        write_file(file_name, file) 
 
-
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":False,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
 filter_calendar(given_dict)
 
 
