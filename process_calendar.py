@@ -26,7 +26,7 @@ def add_event_to_cal(old_event, cal):
 
     cal.add_component(event)
 
-def exclude_events_by_date(file, start_date, end_date):
+def filter_by_date(file, start_date, end_date):
     file_in_text = Calendar.from_ical(file)
 
     # Convert string to datetime object
@@ -126,7 +126,7 @@ def filter_calendar(dict):
     file = get_calendar(input_link)
 
     # Remove events that are outside of the date range
-    file = exclude_events_by_date(file, start_date, end_date)
+    file = filter_by_date(file, start_date, end_date)
 
     # Take filtered list from prev. step and remove non assignments if specified
     if is_non_assignment_excluded:
