@@ -1,31 +1,30 @@
-from flask import Flask
+from flask import Flask, request
+from flask_restful import Api, Resource, reqparse, fields, marshal_with
 from datetime import datetime
 import re
 
 app = Flask(__name__)
+api = Api(app)
 
+in_payload_args = reqparse.RequestParser()
+in_payload_args.add_argument("linkData", type=str, help="Canvas calendar link required!", required=True)
+in_payload_args.add_argument("blacklistData", type=str, help="Blacklist required!", required=True)
+in_payload_args.add_argument("separateData", type=bool, help="Separation data required!", required=True)
+in_payload_args.add_argument("excludeEventsData", type=bool, help="Exclusion data link required!", required=True)
+
+
+class ProcessData(Resource):
+    def post(self):
+        args = in_payload_args.parse_args()
+        return {"calLink": args["linkData"]}
+
+
+api.add_resource(ProcessData, "/api/PostCal")
 
 @app.route("/")
 def home():
     return "Hello, Here!"
 
 
-@app.route("/hello/<name>")
-def hello_there(name):
-    now = datetime.now()
-    formatted_now = now.strftime("%A, %d %B, %Y at %X")
-
-    match_object = re.match("[a-zA-Z]+", name)
-
-    if match_object:
-        clean_name = match_object.group(0)
-    else:
-        clean_name = "Friend"
-
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
-    return content
-
-
-@app.route('/time')
-def get_current_time():
-    return {'time': datetime.now()}
+if __name__ == "__main__":
+    app.run(debug=True)
