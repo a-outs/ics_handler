@@ -1,0 +1,65 @@
+BEGIN:VCALENDAR
+BEGIN:VEVENT
+SUMMARY:Extra Credit Syllabus Quiz [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210106T000000
+DTEND:20210106T000000
+DTSTAMP:20210107T033600Z
+UID:event-assignment-609995
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_609995
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Pre-Lab 1 [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210111T170000Z
+DTEND:20210111T170000Z
+DTSTAMP:20210111T165800Z
+UID:event-assignment-601285
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601285
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lecture Homework 1 (due Weds\, 1/13) [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210113T000000
+DTEND:20210113T000000
+DTSTAMP:20210111T002000Z
+UID:event-assignment-624982
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_624982
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Pre-Lab 2 [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210118T170000Z
+DTEND:20210118T170000Z
+DTSTAMP:20210115T161900Z
+UID:event-assignment-601287
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601287
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lecture Homework 2 (Due Weds\, 1/20) [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210120T000000
+DTEND:20210120T000000
+DTSTAMP:20210115T213000Z
+UID:event-assignment-627565
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_627565
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Post Lab 1 [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210121T000000
+DTEND:20210121T000000
+DTSTAMP:20210117T052800Z
+UID:event-assignment-601286
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_601286
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Midterm 1 [BIS 002B Sec A\,B WQ 2021]
+DTSTART:20210127T180000Z
+DTEND:20210127T180000Z
+DTSTAMP:20210115T214100Z
+UID:event-assignment-627799
+URL:https://canvas.ucdavis.edu/calendar?include_contexts=course_535057&mon
+ th=01&year=2021#assignment_627799
+END:VEVENT
+END:VCALENDAR

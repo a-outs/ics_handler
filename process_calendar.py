@@ -58,6 +58,7 @@ def seperate_cal_by_course(file):
         # Course id is a 6 digit number followed by include_contexts=course_ in the url
         course_id = course_url.split("include_contexts=course_")
         course_id = course_id[1][:6]
+        print(course_id)
 
         if course_id not in cal_dict:
             # Create a new calendar object for course id
@@ -108,44 +109,18 @@ def filter_calendar(dict):
 
         for key in cal_dict:
             name_num = generate_unique_number(num_list)
+            # Add the unique number to a list so it won't get repeated in the future
             num_list.append(name_num)
 
-            for num in num_list:
-                file_name = str(num) + ".ics"
-                name_list.append(file_name)
-                write_file(file_name, cal_dict[key].to_ical())
+            # Write to file, and add the file names to a list that will be returned.
+            file_name = str(name_num) + ".ics"
+            name_list.append(file_name)
+            write_file(file_name, cal_dict[key].to_ical())
         
-        return name_list
-
-'''
-def generate_num_list(): #return list
-    num_list = []
-    name_num = generate_unique_number(num_list)
-    num_list.append(name_num)
-
-    return num_list
-
-def generate_calender_files(num_list, key):
-    name_list = []
-    for num in num_list:
-        file_name = str(num) + ".ics"
-        write_file(file_name, cal_dict[key])
-'''
-    
-
-
-
+        return name_list 
 
 given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"MAT 021B","seperateData":True,"excludeEventsData":True}
 filter_calendar(given_dict)
 
-'''
-file = get_calendar()
-calendar = exclude_all_non_assignments(file)
-
-f = open('test1.ics', 'wb')
-f.write(calendar)
-f.close()
-'''
 
 
