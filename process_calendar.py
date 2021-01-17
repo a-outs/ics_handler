@@ -43,7 +43,7 @@ def filter_by_date(file, start_date, end_date):
         
         # Remove timezone info so the two dates can be compared
         if start <= event_date.replace(tzinfo=None) <= end:
-            add_event_to_cal(old_event, cal)
+            cal.add_component(old_event)
         
     return cal.to_ical()
 
@@ -56,7 +56,7 @@ def exclude_all_non_assignments(file):
         event_string = 'event-calendar-event'
 
         if event_string not in uid:
-            add_event_to_cal(old_event, cal)
+            cal.add_component(old_event)
 
     return cal.to_ical()
 
@@ -68,7 +68,7 @@ def blacklist_events(file, blacklist):
         summary = old_event.get('summary').lower()
         blacklist = blacklist.lower()
         if (blacklist not in summary):
-            add_event_to_cal(old_event, cal)
+            cal.add_component(old_event)
         
     return cal.to_ical()
 
@@ -79,7 +79,7 @@ def whitelist_events(file, whitelist):
     for old_event in file_in_text.walk('VEVENT'):
         summary = old_event.get('summary')
         if (whitelist in summary):
-            add_event_to_cal(old_event, cal)
+            cal.add_component(old_event)
         
     return cal.to_ical()
 
@@ -97,9 +97,9 @@ def seperate_cal_by_course(file):
             # Create a new calendar object for course id
             cal_dict[course_id] = Calendar()
             # Add that event to calendar
-            add_event_to_cal(event, cal_dict[course_id])
+            cal_dict[course_id].add_component(event)
         else:
-            add_event_to_cal(event, cal_dict[course_id])
+            cal_dict[course_id].add_component(event)
     
     return cal_dict
 
@@ -111,7 +111,7 @@ def generate_unique_number(list):
         generate_unique_number(list)
 
 def write_file(name, calendar):
-    save_path = "../buld/"
+    save_path = "../build/"
     name = save_path + name
     f = open(name, 'wb')
     f.write(calendar)
