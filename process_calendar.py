@@ -1,6 +1,7 @@
 from icalendar import Calendar, Event
 import urllib.request
 import random
+import datetime
 
 def get_calendar(url):
     ics_file = urllib.request.urlopen(url).read()
@@ -24,6 +25,27 @@ def add_event_to_cal(old_event, cal):
     event['URL'] = url
 
     cal.add_component(event)
+
+def exclude_events_by_date(file, start_date, end_date):
+    file_in_text = Calendar.from_ical(file)
+
+    # Convert string to datetime object
+    start_date = start_date.split("-")
+    end_date = end_date.split("-")
+    start = datetime.datetime(int(start_date[0]), int(start_date[1]), int(start_date[2]))
+    end = datetime.datetime(int(end_date[0]), int(end_date[1]), int(end_date[2]))
+
+    print(start)
+
+    cal = Calendar()
+    for old_event in file_in_text.walk('VEVENT'):
+        event_date = old_event.get("dtend").dt
+        
+        # Remove timezone info so the two dates can be compared
+        if start <= event_date.replace(tzinfo=None) <= end:
+            add_event_to_cal(old_event, cal)
+        
+    return cal.to_ical()
 
 def exclude_all_non_assignments(file):
     file_in_text = Calendar.from_ical(file)
@@ -58,7 +80,6 @@ def seperate_cal_by_course(file):
         # Course id is a 6 digit number followed by include_contexts=course_ in the url
         course_id = course_url.split("include_contexts=course_")
         course_id = course_id[1][:6]
-        print(course_id)
 
         if course_id not in cal_dict:
             # Create a new calendar object for course id
@@ -87,11 +108,16 @@ def filter_calendar(dict):
     blacklist_terms = dict["blacklistData"]
     is_cal_seperated = dict["seperateData"]
     is_non_assignment_excluded = dict["excludeEventsData"]
+    start_date = dict["startDate"]
+    end_date = dict["endDate"]
 
     # Create unfiltered calendar
     file = get_calendar(input_link)
 
-    # Remove non assignments if specified
+    # Remove events that are outside of the date range
+    file = exclude_events_by_date(file, start_date, end_date)
+
+    # Take filtered list from prev. step and remove non assignments if specified
     if is_non_assignment_excluded:
         file = exclude_all_non_assignments(file)
     
@@ -119,8 +145,12 @@ def filter_calendar(dict):
         
         return name_list 
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"MAT 021B","seperateData":True,"excludeEventsData":True}
+#print(date.today())
+
+
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
 filter_calendar(given_dict)
+
 
 
 
