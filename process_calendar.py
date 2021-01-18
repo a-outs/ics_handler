@@ -76,12 +76,16 @@ def blacklist_events(file, blacklist):
     file_in_text = Calendar.from_ical(file)
 
     cal = Calendar()
-    for old_event in file_in_text.walk('VEVENT'):
-        summary = old_event.get('summary').lower()
-        blacklist = blacklist.lower()
-        if (blacklist not in summary):
-            cal.add_component(old_event)
-        
+    for event in file_in_text.walk('vevent'):
+        test = 0
+        summary = event.get('summary').lower()
+        for s in blacklist:
+            s.lower()
+            if s in summary:
+                test = 1
+                break
+        if test == 0:
+            cal.add_component(event)
     return cal.to_ical()
 
 def whitelist_events(file, whitelist):
@@ -147,13 +151,18 @@ def filter_calendar(dict):
     if is_non_assignment_excluded:
         file = exclude_all_non_assignments(file)
     
-    """
-    # Take filtered list from prev. step and filter with blacklist terms
+    
     if blacklist_terms:
-        blacklist_terms_in_list = blacklist_terms.split(", ")
+        blacklist_terms_in_list = blacklist_terms.split(",")
+        
+        output_list = []
         for term in blacklist_terms_in_list:
-            file = blacklist_events(file, term)
-    """
+            term = term.strip()
+            output_list.append(term)
+
+        file = blacklist_events(file, output_list)
+        
+    
 
     # Take the filtered list from prev. and see if it needs to be split into separate calendars
     if is_cal_separated:
@@ -181,7 +190,6 @@ def filter_calendar(dict):
         write_file(file_name, file) 
         name_list.append(file_name)
         return name_list
-
 
 # Peter's code
 def make_recurring(calendar):
@@ -211,7 +219,6 @@ def create_hash(calendar):
                 event_list.append([cur_event, [(cur_event.get('dtstart')).dt]])
     return event_names
 
-
 def copy_start_cal(calendar):
     new_cal = Calendar()
     new_cal.add('version', calendar['version'].to_ical())
@@ -219,7 +226,6 @@ def copy_start_cal(calendar):
     new_cal.add('calscale', calendar['calscale'].to_ical())
     new_cal.add('method', calendar['method'].to_ical())
     return new_cal
-
 
 def add_to_cal(calendar, event_occur_list):
     for i in range(len(event_occur_list)):
@@ -240,5 +246,5 @@ def get_exdates(datetime_list):
             exdate_list.append(date)
     return exdate_list
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","separateData":True,"excludeEventsData":True, "startDate":"", "endDate":""}
-filter_calendar(given_dict)
+#given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"lecture, ecs, discussion", "separateData":False,"excludeEventsData":False, "startDate":"", "endDate":""}
+#filter_calendar(given_dict)
