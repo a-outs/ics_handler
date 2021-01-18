@@ -162,7 +162,8 @@ def filter_calendar(dict):
 
         file = blacklist_events(file, output_list)
         
-    
+    file_in_text = Calendar.from_ical(file)
+    file = make_recurring(file_in_text).to_ical()
 
     # Take the filtered list from prev. and see if it needs to be split into separate calendars
     if is_cal_separated:
@@ -194,7 +195,8 @@ def filter_calendar(dict):
 # Peter's code
 def make_recurring(calendar):
     hash_by_name = create_hash(calendar)
-    updated_cal = copy_start_cal(calendar)
+    #updated_cal = copy_start_cal(calendar)
+    updated_cal = Calendar()
     for name in hash_by_name:
         add_to_cal(updated_cal, hash_by_name[name])
     return updated_cal
@@ -219,6 +221,7 @@ def create_hash(calendar):
                 event_list.append([cur_event, [(cur_event.get('dtstart')).dt]])
     return event_names
 
+"""
 def copy_start_cal(calendar):
     new_cal = Calendar()
     new_cal.add('version', calendar['version'].to_ical())
@@ -226,6 +229,7 @@ def copy_start_cal(calendar):
     new_cal.add('calscale', calendar['calscale'].to_ical())
     new_cal.add('method', calendar['method'].to_ical())
     return new_cal
+"""
 
 def add_to_cal(calendar, event_occur_list):
     for i in range(len(event_occur_list)):
@@ -246,5 +250,5 @@ def get_exdates(datetime_list):
             exdate_list.append(date)
     return exdate_list
 
-#given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"lecture, ecs, discussion", "separateData":False,"excludeEventsData":False, "startDate":"", "endDate":""}
-#filter_calendar(given_dict)
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"lecture, ecs, discussion", "separateData":False,"excludeEventsData":False, "startDate":"", "endDate":""}
+filter_calendar(given_dict)
