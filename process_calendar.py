@@ -155,13 +155,19 @@ def filter_calendar(dict):
             # Write to file, and add the file names to a list that will be returned.
             file_name = str(name_num) + ".ics"
             name_list.append(file_name)
+    
             write_file(file_name, cal_dict[key].to_ical())
+            return name_list
     else:
         num_list = []
+        name_list = []
         name_num = generate_unique_number(num_list)
         file_name = str(name_num) + ".ics"
 
         write_file(file_name, file) 
+
+        name_list.append(file_name)
+        return name_list
 
 given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":False,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
 filter_calendar(given_dict)
