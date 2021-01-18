@@ -7,45 +7,54 @@ def get_calendar(url):
     ics_file = urllib.request.urlopen(url).read()
     return ics_file
 
-def add_event_to_cal(old_event, cal):
-    event = Event()
+def filter_by_case(original_cal, start_date, end_date): 
+    if not start_date and not end_date:
+        return original_cal
 
-    summary = old_event.get('summary')
-    dt_stamp = old_event.get('dtstamp').to_ical()
-    start_date = old_event.get('dtstart').to_ical()
-    end_date = old_event.get('dtend').to_ical()
-    description = old_event.get('description')
-    uid = old_event.get('uid')
-    url = old_event.get('url')
+    elif start_date and not end_date:
+        start_date = start_date.split("-")
+        start = datetime.datetime(int(start_date[0]), int(start_date[1]), int(start_date[2])) 
 
-    event['DTSTAMP'] = dt_stamp
-    event['UID'] = uid
-    event['DTSTART'] = start_date
-    event['DTEND'] = end_date
-    event['SUMMARY'] = summary
-    event['DESCRIPTION']
-    event['URL'] = url
+        cal = Calendar()
+        for old_event in original_cal.walk('VEVENT'):
+            event_date = old_event.get("dtend").dt
 
-    cal.add_component(event)
+            # Remove timezone info so the two dates can be compared
+            if start <= event_date.replace(tzinfo=None):
+                cal.add_component(old_event)
+    
+    elif not start_date and end_date:
+        end_date = end_date.split("-")
+        end = datetime.datetime(int(end_date[0]), int(end_date[1]), int(end_date[2]))
+
+        cal = Calendar()
+        for old_event in original_cal.walk('VEVENT'):
+            event_date = old_event.get("dtend").dt
+
+            # Remove timezone info so the two dates can be compared
+            if event_date.replace(tzinfo=None) <= end:
+                cal.add_component(old_event)
+    
+    else:
+        start_date = start_date.split("-")
+        end_date = end_date.split("-")
+        start = datetime.datetime(int(start_date[0]), int(start_date[1]), int(start_date[2]))
+        end = datetime.datetime(int(end_date[0]), int(end_date[1]), int(end_date[2]))
+
+        cal = Calendar()
+        for old_event in original_cal.walk('VEVENT'):
+            event_date = old_event.get("dtend").dt
+            
+            # Remove timezone info so the two dates can be compared
+            if start <= event_date.replace(tzinfo=None) <= end:
+                cal.add_component(old_event)
+    
+    return cal.to_ical()
 
 def filter_by_date(file, start_date, end_date):
     file_in_text = Calendar.from_ical(file)
-
-    # Convert string to datetime object
-    start_date = start_date.split("-")
-    end_date = end_date.split("-")
-    start = datetime.datetime(int(start_date[0]), int(start_date[1]), int(start_date[2]))
-    end = datetime.datetime(int(end_date[0]), int(end_date[1]), int(end_date[2]))
-
-    cal = Calendar()
-    for old_event in file_in_text.walk('VEVENT'):
-        event_date = old_event.get("dtend").dt
-        
-        # Remove timezone info so the two dates can be compared
-        if start <= event_date.replace(tzinfo=None) <= end:
-            cal.add_component(old_event)
-        
-    return cal.to_ical()
+    
+    return filter_by_case(file_in_text, start_date, end_date)
 
 def exclude_all_non_assignments(file):
     file_in_text = Calendar.from_ical(file)
@@ -163,7 +172,7 @@ def filter_calendar(dict):
 
         write_file(file_name, file) 
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":False,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":""}
 filter_calendar(given_dict)
 
 
