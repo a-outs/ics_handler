@@ -9,7 +9,10 @@ def get_calendar(url):
 
 def filter_by_case(original_cal, start_date, end_date): 
     if not start_date and not end_date:
-        return original_cal
+        cal = Calendar()
+
+        for old_event in original_cal.walk('VEVENT'):
+            cal.add_component(old_event)
 
     elif start_date and not end_date:
         start_date = start_date.split("-")
@@ -144,11 +147,13 @@ def filter_calendar(dict):
     if is_non_assignment_excluded:
         file = exclude_all_non_assignments(file)
     
+    """
     # Take filtered list from prev. step and filter with blacklist terms
     if blacklist_terms:
         blacklist_terms_in_list = blacklist_terms.split(", ")
         for term in blacklist_terms_in_list:
             file = blacklist_events(file, term)
+    """
 
     # Take the filtered list from prev. and see if it needs to be split into separate calendars
     if is_cal_separated:
@@ -166,7 +171,7 @@ def filter_calendar(dict):
             name_list.append(file_name)
 
             write_file(file_name, cal_dict[key].to_ical())
-            return name_list
+        return name_list
     else:
         num_list = []
         name_list = []
@@ -176,6 +181,7 @@ def filter_calendar(dict):
         write_file(file_name, file) 
         name_list.append(file_name)
         return name_list
+
 
 # Peter's code
 def make_recurring(calendar):
@@ -225,7 +231,6 @@ def add_to_cal(calendar, event_occur_list):
         event_occur_list[i][0].add('exdate', exdates)
         calendar.add_component(event_occur_list[i][0])
 
-
 def get_exdates(datetime_list):
     exdate_list = []
     datetime_list.sort()
@@ -235,5 +240,5 @@ def get_exdates(datetime_list):
             exdate_list.append(date)
     return exdate_list
 
-#given_dict = {"inputLinkData":"link","blacklistData":"","separateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
-#filter_calendar(given_dict)
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","separateData":True,"excludeEventsData":True, "startDate":"", "endDate":""}
+filter_calendar(given_dict)
