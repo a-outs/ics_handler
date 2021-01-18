@@ -92,7 +92,7 @@ def whitelist_events(file, whitelist):
         
     return cal.to_ical()
 
-def seperate_cal_by_course(file): 
+def separate_cal_by_course(file): 
     cal_dict = {}
 
     file_in_text = Calendar.from_ical(file)
@@ -150,11 +150,11 @@ def filter_calendar(dict):
         for term in blacklist_terms_in_list:
             file = blacklist_events(file, term)
 
-    # Take the filtered list from prev. and see if it needs to be split into seperate calendars
+    # Take the filtered list from prev. and see if it needs to be split into separate calendars
     if is_cal_separated:
         num_list = []
         name_list = []
-        cal_dict = seperate_cal_by_course(file)
+        cal_dict = separate_cal_by_course(file)
 
         for key in cal_dict:
             name_num = generate_unique_number(num_list)
@@ -177,5 +177,5 @@ def filter_calendar(dict):
         name_list.append(file_name)
         return name_list
 
-
-
+given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","separateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
+filter_calendar(given_dict)
