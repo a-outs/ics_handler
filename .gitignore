@@ -4,3 +4,4 @@ env
 __pycache__
 *.ics
 venv
+*.DS_Store

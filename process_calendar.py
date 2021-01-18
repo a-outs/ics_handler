@@ -169,11 +169,7 @@ def filter_calendar(dict):
         name_list.append(file_name)
         return name_list
 
-given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":False,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
-filter_calendar(given_dict)
 
-# given_dict = {"inputLinkData":"https://canvas.ucdavis.edu/feeds/calendars/user_URNeG1MSEjHo2ChpoCUFan9VQ4NDe15UE3bzMlhj.ics","blacklistData":"","seperateData":True,"excludeEventsData":True, "startDate":"2021-01-01", "endDate":"2021-02-02"}
-# filter_calendar(given_dict)
 
 
 
